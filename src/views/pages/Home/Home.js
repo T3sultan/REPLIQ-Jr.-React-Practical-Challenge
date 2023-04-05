@@ -1,10 +1,10 @@
 import React from "react";
-import Product from "../Product/Product";
 
 const Home = () => {
   return (
-    <div className="mt-9 bg-red-600">
-      <Product />
+    <div className=" mt-20  flex justify-center text-center">
+      <h4>Home</h4> 
+     
     </div>
   );
 };

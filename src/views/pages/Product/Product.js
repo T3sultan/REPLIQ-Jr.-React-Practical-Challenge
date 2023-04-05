@@ -2,7 +2,7 @@ import React from "react";
 
 const Product = () => {
   return (
-    <div className="bg-blue-800 mt-9">
+    <div className="mt-20  flex justify-center text-center">
       <h1>Product</h1>
     </div>
   );
