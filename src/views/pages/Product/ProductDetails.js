@@ -4,15 +4,14 @@ import { Icon } from "@iconify/react";
 
 const ProductDetails = () => {
   const { productId } = useParams();
-  console.log(productId);
   const [details, setDetails] = useState({});
 
-  console.log(details);
   useEffect(() => {
     fetch(`http://localhost:5000/product/${productId}`)
       .then(res => res.json())
       .then(data => setDetails(data));
   }, [productId]);
+
   return (
     <div className=" justify-center mt-6 grid grid-cols-1 md:grid-cols-2">
       <div className=" mt-14 ml-36 ">

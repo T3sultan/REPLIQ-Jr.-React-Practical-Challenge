@@ -11,6 +11,7 @@ import Dashboard from "./views/pages/Dashboard/Dashboard";
 import AddProduct from "./views/pages/Dashboard/AddProduct/AddProduct";
 import ProductDetails from "./views/pages/Product/ProductDetails";
 import Checkout from "./views/pages/Checkout/Checkout";
+import RequiredAuth from "./hooks/RequireAuth";
 
 function App() {
   return (
@@ -26,7 +27,14 @@ function App() {
         <Route path="/product/:productId" element={<ProductDetails />}></Route>
         <Route path="/checkout/:productId" element={<Checkout />}></Route>
 
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequiredAuth>
+              <Dashboard />
+            </RequiredAuth>
+          }
+        ></Route>
         <Route path="/addProduct" element={<AddProduct />}></Route>
       </Routes>
       <ToastContainer />
