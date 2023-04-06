@@ -1,10 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({ product }) => {
-  const { text, image, price, description } = product;
+  const { text, image,_id } = product;
+  const navigate = useNavigate();
+
+  const navigateDetails = _id => {
+    navigate(`/product/${_id}`);
+  };
 
   return (
-    <div className="card cursor-pointer bg-white border-gray-200 transition transform duration-500 hover:shadow-lg hover:scale-100 rounded relative">
+    <div
+      onClick={() => navigateDetails(_id)}
+      className="card cursor-pointer bg-white border-gray-200 transition transform duration-500 hover:shadow-lg hover:scale-100 rounded relative"
+    >
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl w-40" />
       </figure>
