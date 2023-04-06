@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import g from "../../../assets/google_.png";
-import login from "../../../assets/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import analytics from "../../../firebase.init";
+import Loading from "../../../components/Loading";
 
 const Login = () => {
+  const [signInWithGoogle, guser, gloading, gerror] =
+    useSignInWithGoogle(analytics);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/home";
+  let errorMessage;
+
+  // useEffect(() => {
+  //   navigate(from, { replace: true });
+  // }, [from, navigate]);
+  navigate("/home")
+
+  if (guser) {
+    console.log("user", guser);
+  }
+
+  if (gloading) {
+    return <Loading />;
+  }
+  if (gerror) {
+    errorMessage = <p className="text-red-500 text-sm">{gerror?.message}</p>;
+  }
+
   return (
     <div className="grid items-center h-full justify-items-center mt-20">
       <img
@@ -13,7 +38,7 @@ const Login = () => {
       />
       <h3 className="font-bold">Login With</h3>
       <div
-        // onClick={() => signInWithGoogle()}
+        onClick={() => signInWithGoogle()}
         className="flex items-center h-10 mt-4 border cursor-pointer rounded-3xl w-72"
       >
         <img className="w-6 ml-2 " src={g} alt="" />

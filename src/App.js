@@ -1,4 +1,4 @@
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./components/Header/Navbar";
@@ -7,6 +7,7 @@ import Product from "./views/pages/Product/Product";
 import { ToastContainer } from "react-toastify";
 import Login from "./views/auth/Login/Login";
 import Register from "./views/auth/Register/Register";
+import Dashboard from "./views/pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
         <Route path="/product" element={<Product />}></Route>
         <Route path="/product/:id" element={<Product />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
       </Routes>
       <ToastContainer />
     </div>
