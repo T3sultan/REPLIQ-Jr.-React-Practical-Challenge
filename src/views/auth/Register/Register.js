@@ -55,11 +55,11 @@ const Register = () => {
         <div className="card-body">
           <h2 className=" text-2xl font-bold">Create an account</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs ml-7">
+            <div className="form-control w-full max-w-xs ">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="mt-4 w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
+                className=" w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
                 {...register("name", {
                   required: { value: true, message: "Name is required" },
                 })}
@@ -72,11 +72,11 @@ const Register = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs ml-7">
+            <div className="form-control w-full max-w-xs ">
               <input
                 type="email"
                 placeholder="Your Email"
-                className="mt-4 w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
+                className=" w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
                 {...register("email", {
                   required: { value: true, message: "Email is required" },
                   pattern: {
@@ -98,11 +98,11 @@ const Register = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs ml-7">
+            <div className="form-control w-full max-w-xs">
               <input
                 type="password"
                 placeholder="Your Password"
-                className="mt-4 w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
+                className=" w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
                 {...register("password", {
                   required: { value: true, message: "Password is required" },
                   minLength: {
@@ -124,11 +124,11 @@ const Register = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs ml-7">
+            <div className="form-control w-full max-w-xs ">
               <input
                 type="password"
                 placeholder="Confirm Your Password"
-                className="mt-4 w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
+                className=" w-full max-w-xs border-b border-gray-300 focus:outline-none text-black"
                 {...register("password", {
                   required: {
                     value: true,
@@ -170,7 +170,7 @@ const Register = () => {
           </p>
           <div className="divider">Or</div>
 
-          <div className="flex items-center   h-10  border cursor-pointer rounded-3xl  w-full max-w-xs ml-7">
+          <div className="flex items-center   h-10  border cursor-pointer rounded-3xl  w-full max-w-xs ">
             <img className="w-6 ml-2  rounded-xl " src={fb} alt="" />
             <div className="flex justify-center ">
               <h4 className="ml-10 text-sm ">Continue with Facebook</h4>
@@ -178,7 +178,7 @@ const Register = () => {
           </div>
           <div
             onClick={() => signInWithGoogle()}
-            className="flex items-center h-10 border cursor-pointer rounded-3xl  w-full max-w-xs ml-7 my-4"
+            className="flex items-center h-10 border cursor-pointer rounded-3xl  w-full max-w-xs "
           >
             <img className="w-6 ml-2 " src={g} alt="" />
             <div className="flex justify-center ">

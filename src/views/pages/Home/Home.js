@@ -1,10 +1,14 @@
 import React from "react";
+import Banner from "../../../components/Bannner";
+import Footer from "../../../components/Footer";
+import Product from "../Product/Product";
 
 const Home = () => {
   return (
-    <div className=" mt-20  flex justify-center text-center">
-      <h4>Home</h4> 
-     
+    <div className="">
+      <Banner />
+      <Product />
+      <Footer />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import analytics from "../../firebase.init";
 import { Icon } from "@iconify/react";
-import logo from "../../assets/1667336262374.jpg";
+import logo from "../../assets/repliq.png";
 
 const Navbar = () => {
   const [user] = useAuthState(analytics);
@@ -21,6 +21,9 @@ const Navbar = () => {
       </li>
       <li>
         <CustomLink to="/product">Product</CustomLink>
+      </li>
+      <li>
+        <CustomLink to="/addProduct">AddProduct</CustomLink>
       </li>
       {user && (
         <li>
@@ -69,7 +72,7 @@ const Navbar = () => {
         </div>
         <Link to="/home">
           <img
-            className=" w-2/6 hidden cursor-pointer sm:flex  "
+            className=" w-2/6 hidden cursor-pointer sm:flex bg-gray-400  "
             src={logo}
             alt=""
           />
