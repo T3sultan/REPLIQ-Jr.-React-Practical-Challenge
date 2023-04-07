@@ -12,6 +12,10 @@ import AddProduct from "./views/pages/Dashboard/AddProduct/AddProduct";
 import ProductDetails from "./views/pages/Product/ProductDetails";
 import Checkout from "./views/pages/Checkout/Checkout";
 import RequiredAuth from "./hooks/RequireAuth";
+import CustomersList from "./views/pages/Dashboard/CustomersList/CustomersList";
+import Overview from "./views/pages/Dashboard/Overview/Overview";
+import OrderList from "./views/pages/Dashboard/OrderList/OrderList";
+import ProductList from "./views/pages/Dashboard/ProductList/ProductList";
 
 function App() {
   return (
@@ -34,8 +38,13 @@ function App() {
               <Dashboard />
             </RequiredAuth>
           }
-        ></Route>
-        <Route path="/addProduct" element={<AddProduct />}></Route>
+        >
+          <Route path="customerList" element={<CustomersList />}></Route>
+          <Route path="overview" element={<Overview />}></Route>
+          <Route path="orderList" element={<OrderList />}></Route>
+          <Route path="productList" element={<ProductList />}></Route>
+          <Route path="addProduct" element={<AddProduct />}></Route>
+        </Route>
       </Routes>
       <ToastContainer />
     </div>
