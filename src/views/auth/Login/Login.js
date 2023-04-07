@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import analytics from "../../../firebase.init";
 import Loading from "../../../components/Loading";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, guser, gloading, gerror] =
@@ -12,15 +13,23 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/home";
   let errorMessage;
+  const [token] = useToken(guser);
+
 
   // useEffect(() => {
   //   navigate(from, { replace: true });
   // }, [from, navigate]);
-  navigate("/home")
+ 
 
   if (guser) {
     console.log("user", guser);
   }
+    useEffect(() => {
+      if (token) {
+        console.log("user", guser);
+        navigate(from, { replace: true });
+      }
+    }, [token, from, navigate]);
 
   if (gloading) {
     return <Loading />;

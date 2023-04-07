@@ -4,24 +4,25 @@ import CustomerTable from "./CustomerTable";
 import { useQuery } from "react-query";
 
 const CustomersList = () => {
-    const {
-      data: users,
-      isLoading,
-      refetch,
-    } = useQuery("users", () =>
-      fetch(`http://localhost:5000/user`, {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          // authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }).then(res => res.json())
-    );
-    if (isLoading) {
-      return <Loading />;
-    }
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
+    fetch(`http://localhost:5000/user`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then(res => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className=" min-h-full  bookingContainer  ">
+
       <div>
         <table className="table w-full">
           <thead>
@@ -33,7 +34,7 @@ const CustomersList = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {users?.map((user, index) => (
               <CustomerTable
                 index={index}
                 key={user._id}

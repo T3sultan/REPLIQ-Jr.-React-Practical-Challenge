@@ -10,6 +10,7 @@ import {
 } from "react-firebase-hooks/auth";
 import analytics from "../../../firebase.init";
 import Loading from "../../../components/Loading";
+import useToken from "../../../hooks/useToken";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -24,6 +25,7 @@ const Register = () => {
     handleSubmit,
   } = useForm();
   const navigate = useNavigate();
+  const [token] = useToken(user || guser);
 
   const onSubmit = async data => {
     // console.log(data);
@@ -45,9 +47,9 @@ const Register = () => {
       </p>
     );
   }
-  // if (token) {
-  //   navigate("/product");
-  // }
+  if (token) {
+    navigate("/product");
+  }
 
   return (
     <div className="h-screen flex justify-center items-center text-center">

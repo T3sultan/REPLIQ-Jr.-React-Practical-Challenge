@@ -51,7 +51,7 @@ const CustomerTable = ({ user, refetch, index }) => {
             onClick={makeAdminUser}
             width="30px"
             icon="subway:admin-1"
-            color="red"
+            color="green"
           />
         )}
         {role == "admin" && (
@@ -68,7 +68,7 @@ const CustomerTable = ({ user, refetch, index }) => {
           style={{ cursor: "pointer" }}
           width="30px"
           icon="ic:round-delete"
-          color="orange"
+          color="red"
         />
       </td>
     </tr>

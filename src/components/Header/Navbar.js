@@ -22,9 +22,7 @@ const Navbar = () => {
       <li>
         <CustomLink to="/product">Product</CustomLink>
       </li>
-      <li>
-        <CustomLink to="/addProduct">AddProduct</CustomLink>
-      </li>
+
       {user && (
         <li>
           <CustomLink to="/dashboard">Dashboard</CustomLink>
