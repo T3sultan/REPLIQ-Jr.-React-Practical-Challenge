@@ -16,6 +16,7 @@ import CustomersList from "./views/pages/Dashboard/CustomersList/CustomersList";
 import Overview from "./views/pages/Dashboard/Overview/Overview";
 import OrderList from "./views/pages/Dashboard/OrderList/OrderList";
 import ProductList from "./views/pages/Dashboard/ProductList/ProductList";
+import Payment from "./views/pages/Dashboard/Payment/Payment";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="orderList" element={<OrderList />}></Route>
           <Route path="productList" element={<ProductList />}></Route>
           <Route path="addProduct" element={<AddProduct />}></Route>
+          <Route path="payment/:id" element={<Payment />}></Route>
         </Route>
       </Routes>
       <ToastContainer />
