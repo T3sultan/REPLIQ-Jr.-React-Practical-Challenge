@@ -5,12 +5,18 @@ import { Icon } from "@iconify/react";
 const ProductDetails = () => {
   const { productId } = useParams();
   const [details, setDetails] = useState({});
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetch(`https://repliqserver.onrender.com/product/${productId}`)
       .then(res => res.json())
       .then(data => setDetails(data));
   }, [productId]);
+  const handle = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
 
   return (
     <div className=" justify-center mt-6 grid grid-cols-1 md:grid-cols-2">
@@ -20,11 +26,11 @@ const ProductDetails = () => {
         <div className="mt-4 flex ml-60">
           <p className="text-2xl mr-3 font-bold">${details?.price}</p>
           <div className="border flex w-20 h-8 justify-center rounded-2xl ">
-            <button className="">
+            <button onClick={handle} className="">
               <Icon className="mr-1" icon="ep:minus" />{" "}
             </button>
-            <p>1</p>
-            <button>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>
               <Icon className="ml-1" icon="ep:plus" />{" "}
             </button>
           </div>
