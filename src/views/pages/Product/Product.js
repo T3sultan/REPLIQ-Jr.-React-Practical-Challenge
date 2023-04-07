@@ -6,7 +6,7 @@ const Product = () => {
   const [loading] = useState(false);
   console.log(products);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://repliqserver.onrender.com/product")
       .then(res => res.json())
       .then(data => setProducts(data.slice(0, 6)));
   }, []);

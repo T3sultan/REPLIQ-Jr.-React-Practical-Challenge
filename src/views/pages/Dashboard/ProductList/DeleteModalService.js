@@ -6,7 +6,7 @@ const DeleteModalService = ({ refetch, serviceDelete, setServiceDelete }) => {
   const { text, email } = serviceDelete;
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/manage/${email}`, {
+    fetch(`https://repliqserver.onrender.com/manage/${email}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -12,7 +12,7 @@ const Checkout = () => {
 
   const [product, setProduct] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://repliqserver.onrender.com/product/${productId}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setProduct(data));
@@ -27,7 +27,7 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post("http://localhost:5000/order", order).then(res => {
+    axios.post("https://repliqserver.onrender.com/order", order).then(res => {
       const { data } = res;
       if (data.insertedId) {
         toast("Your order is Done");

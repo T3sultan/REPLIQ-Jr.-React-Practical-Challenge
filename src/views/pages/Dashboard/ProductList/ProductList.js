@@ -11,7 +11,7 @@ const ProductList = () => {
     isLoading,
     refetch,
   } = useQuery("manage", () =>
-    fetch(`http://localhost:5000/manage`, {
+    fetch(`https://repliqserver.onrender.com/manage`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

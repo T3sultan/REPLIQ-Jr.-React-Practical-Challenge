@@ -16,10 +16,7 @@ const Login = () => {
   const [token] = useToken(guser);
 
 
-  // useEffect(() => {
-  //   navigate(from, { replace: true });
-  // }, [from, navigate]);
- 
+
 
   if (guser) {
     console.log("user", guser);

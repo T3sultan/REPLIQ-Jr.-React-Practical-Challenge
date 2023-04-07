@@ -7,7 +7,7 @@ const ProductDetails = () => {
   const [details, setDetails] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${productId}`)
+    fetch(`https://repliqserver.onrender.com/product/${productId}`)
       .then(res => res.json())
       .then(data => setDetails(data));
   }, [productId]);

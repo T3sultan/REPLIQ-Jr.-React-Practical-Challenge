@@ -11,7 +11,7 @@ const AddProduct = () => {
     const price = event.target.price.value;
     const image = event.target.image.value;
     const all = { text, description, image, price, color };
-    const url = `http://localhost:5000/product`;
+    const url = `https://repliqserver.onrender.com/product`;
     fetch(url, {
       method: "POST",
       headers: {

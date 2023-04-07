@@ -6,7 +6,7 @@ const CustomerTable = ({ user, refetch, index }) => {
   const { email, role } = user;
 
   const makeAdminUser = () => {
-    const url = `http://localhost:5000/user/admin/${email}`;
+    const url = `https://repliqserver.onrender.com/user/admin/${email}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
-  const [loading] = useState(false);
   console.log(orders);
   useEffect(() => {
-    fetch("http://localhost:5000/order")
+    fetch("https://repliqserver.onrender.com/order")
       .then(res => res.json())
       .then(data => setOrders(data));
   }, []);

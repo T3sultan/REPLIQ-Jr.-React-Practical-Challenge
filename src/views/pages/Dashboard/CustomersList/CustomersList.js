@@ -9,7 +9,7 @@ const CustomersList = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(`http://localhost:5000/user`, {
+    fetch(`https://repliqserver.onrender.com/user`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
