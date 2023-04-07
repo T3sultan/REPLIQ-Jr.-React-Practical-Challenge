@@ -34,16 +34,7 @@ const Dashboard = () => {
               <h3 className="font-bold ">Customer List</h3>
             </CustomLink>
           </li>
-          <li>
-            <CustomLink
-              className="flex items-center gap-1"
-              to="/dashboard/overview"
-            >
-              <Icon width="22px" icon="icon-park:mail-review" />
-
-              <h3 className="font-bold ">Overview</h3>
-            </CustomLink>
-          </li>
+          
           <li>
             <CustomLink
               className="flex items-center gap-1"
@@ -77,41 +68,16 @@ const Dashboard = () => {
               <h3 className="font-bold ">Add Product</h3>
             </CustomLink>
           </li>
+          <li>
+            <CustomLink
+              className="flex items-center gap-1"
+              to="/dashboard/payment"
+            >
+              <Icon width="22px" icon="icon-park:mail-review" />
 
-          {/* {admin && (
-            <>
-              <li>
-                <CustomLink
-                  className="flex items-center gap-1"
-                  to="/dashboard/addService"
-                >
-                  <Icon width="22px" icon="material-symbols:add" />
-
-                  <h3 className="font-bold ">Add Service</h3>
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  className="flex items-center gap-1"
-                  to="/dashboard/makeAdmin"
-                >
-                  <Icon width="22px" icon="clarity:administrator-line" />
-
-                  <h3 className="font-bold ">Make Admin</h3>
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  className="flex items-center gap-1"
-                  to="/dashboard/manageService"
-                >
-                  <Icon width="22px" icon="arcticons:activity-manager" />
-
-                  <h3 className="font-bold ">Manage Services</h3>
-                </CustomLink>
-              </li>
-            </>
-          )} */}
+              <h3 className="font-bold ">Payment System</h3>
+            </CustomLink>
+          </li>
         </ul>
       </div>
     </div>
